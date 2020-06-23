@@ -1,0 +1,82 @@
+{% extends "layou2.html" %}
+{% block content %}
+<center>
+                <p><a href="{{ url_for('prospects') }}">Return to Prospects</a></p>
+
+    <h1>Fundraising Prospects</h1>
+    <br>
+    <br>
+
+
+    {% for user in first_list %}
+        <div class = "row">
+
+        <div class="col-sm">
+          <label for="year">Name</label>
+            <h5><a href="{{ url_for('prospect_info', email = user.email) }}">{{ user.main_data.first_name }} {{ user.main_data.last_name }}</a></h5>
+        </div>
+        <div class="col-sm">
+          <label for="year">Email</label>
+            <h5>{{ user.email }}</h5>
+        </div>
+            <div class = "col-sm">
+                <label for="something">Committee</label>
+                <h5>{{ user.committee }}</h5>
+            </div>
+            <div class = "col-sm">
+                <label for="something">Rank</label>
+                <h5>{{ user.digit }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+ <!--<div class = "row">-->
+
+     {% for user in second_list %}
+        <div class = "row">
+
+        <div class="col-sm">
+          <label for="year">Name</label>
+            <h5><a href="{{ url_for('prospect_info', email = user.email) }}">{{ user.main_data.first_name }} {{ user.main_data.last_name }}</a></h5>
+        </div>
+        <div class="col-sm">
+          <label for="year">Email</label>
+            <h5>{{ user.email }}</h5>
+        </div>
+            <div class = "col-sm">
+                <label for="something">Committee</label>
+                <h5>{{ user.committee }}</h5>
+            </div>
+            <div class = "col-sm">
+                <label for="something">Rank</label>
+                <h5>{{ user.digit }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+ <!--<div class = "row">-->
+
+     {% for user in third_list %}
+        <div class = "row">
+
+        <div class="col-sm">
+          <label for="year">Name</label>
+            <h5><a href="{{ url_for('prospect_info', email = user.email) }}">{{ user.main_data.first_name }} {{ user.main_data.last_name }}</a></h5>
+        </div>
+        <div class="col-sm">
+          <label for="year">Email</label>
+            <h5>{{ user.email }}</h5>
+        </div>
+            <div class = "col-sm">
+                <label for="something">Committee</label>
+                <h5>{{ user.committee }}</h5>
+            </div>
+            <div class = "col-sm">
+                <label for="something">Rank</label>
+                <h5>{{ user.digit }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+ <!--<div class = "row">-->
+
+     </center>
+
+{% endblock content %}

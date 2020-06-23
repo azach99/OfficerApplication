@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<center>
+    <h3>Are you sure you would like to clear the Database?</h3>
+    <p>ALL current applicants will be removed</p>
+    <form class = "needs-validation" method = "POST">
+        {{ form.hidden_tag() }}
+        <div class = "col-md mb-3">
+            {{ form.password.label(class = "form-control-label") }}
+            {% if form.password.errors %}
+                {{ form.password(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.password(class = "form-control form-control-lg") }}
+            {% endif %}
+            <div class = "form-group">
+                {{ form.delete(class = "btn btn-outline-info")}}
+          </div>
+        </div>
+    </form>
+</center>
+
+{% endblock content %}

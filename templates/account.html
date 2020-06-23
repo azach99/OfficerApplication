@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+{% block content %}
+        <center>
+            <!--<h5>First Name: {{ main_user.first_name }}</h5>
+            <h5>Last Name: {{ main_user.last_name }}</h5>-->
+            <h1>{{ main_user.first_name }} {{ main_user.last_name }}</h1>
+            <h5>Username: {{ main_user.username }}</h5>
+            <h5>Email: {{ main_user.email }}</h5>
+            <h5>Address: {{ main_user.address }}</h5>
+            <h5>Major: {{ main_user.major }}</h5>
+            <h5>Year: {{ main_user.year }}</h5>
+            <h5>Phone Number: {{ main_user.phone_number }}</h5>
+
+            <br>
+            <br>
+            <h2>Fall 2021 Courses</h2>
+            <br>
+
+
+            <div class = "row">
+                <div class="col-sm">
+                    <label for="year">Course Number</label>
+                        <h5>{{ courses_user.course_1_number }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year">Course Name</label>
+                        <h5>{{ courses_user.course_1_name }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year"># of Credits</label>
+                        <h5>{{ courses_user.course_1_credits }}</h5>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col-sm">
+                    <label for="year">Course Number</label>
+                        <h5>{{ courses_user.course_2_number }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year">Course Name</label>
+                        <h5>{{ courses_user.course_2_name }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year"># of Credits</label>
+                        <h5>{{ courses_user.course_2_credits }}</h5>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col-sm">
+                    <label for="year">Course Number</label>
+                        <h5>{{ courses_user.course_3_number }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year">Course Name</label>
+                        <h5>{{ courses_user.course_3_name }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year"># of Credits</label>
+                        <h5>{{ courses_user.course_3_credits }}</h5>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col-sm">
+                    <label for="year">Course Number</label>
+                        <h5>{{ courses_user.course_4_number }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year">Course Name</label>
+                        <h5>{{ courses_user.course_4_name }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year"># of Credits</label>
+                        <h5>{{ courses_user.course_4_credits }}</h5>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col-sm">
+                    <label for="year">Course Number</label>
+                        <h5>{{ courses_user.course_5_number }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year">Course Name</label>
+                        <h5>{{ courses_user.course_5_name }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year"># of Credits</label>
+                        <h5>{{ courses_user.course_5_credits }}</h5>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col-sm">
+                    <label for="year">Course Number</label>
+                        <h5>{{ courses_user.course_6_number }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year">Course Name</label>
+                        <h5>{{ courses_user.course_6_name }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year"># of Credits</label>
+                        <h5>{{ courses_user.course_6_credits }}</h5>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col-sm">
+                    <label for="year">Course Number</label>
+                        <h5>{{ courses_user.course_7_number }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year">Course Name</label>
+                        <h5>{{ courses_user.course_7_name }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year"># of Credits</label>
+                        <h5>{{ courses_user.course_7_credits }}</h5>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col-sm">
+                    <label for="year">Course Number</label>
+                        <h5>{{ courses_user.course_8_number }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year">Course Name</label>
+                        <h5>{{ courses_user.course_8_name }}</h5>
+                </div>
+                <div class="col-sm">
+                    <label for="year"># of Credits</label>
+                        <h5>{{ courses_user.course_8_credits }}</h5>
+                </div>
+            </div>
+            <h6>Total Credits: {{credits}}</h6>
+            <br>
+            <br>
+            <h2>Committee Selections</h2>
+            <br>
+            <h5>First Choice: {{ committees_user.first_choice }}</h5>
+            <h5>Second Choice: {{ committees_user.second_choice }}</h5>
+            <h5>Third Choice: {{ committees_user.third_choice }}</h5>
+            <br>
+            <br>
+            <h2>Questionnaire</h2>
+            <br>
+            <h5> What other organizations/activities will you be participating in this upcoming school year?: {{ questions_user.question_1 }}</h5>
+            <h5> What qualifications/characteristics can you bring to the committees you have chosen?: {{ questions_user.question_2 }}</h5>
+            <h5> What new ideas/suggestions do you have for the committees you have chosen other than the ones outlined in the Constitution*?: {{ questions_user.question_3 }}</h5>
+            <h5> What new ideas/suggestions do you have for FASA in general?: {{ questions_user.question_4 }}</h5>
+            <br>
+            <br>
+         </center>
+{% endblock content %}

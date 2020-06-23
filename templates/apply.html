@@ -1,0 +1,364 @@
+{% extends "layout.html" %}
+{% block content %}
+  <center>
+    <div class="col-md-8 order-md-1"> <!--style = "margin-left: 15%; margin-right: 15%"-->
+      <h1>Application</h1>
+      <form class="needs-validation" method = "POST">
+        {{ main_form.hidden_tag() }}
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First name</label>
+            <!--<input type="text" class="form-control" id="firstName" placeholder="" value="" required>-->
+            {% if main_form.first_name.errors %}
+              {{ main_form.first_name(class = "form-control form-control-lg is-invalid")}}
+              <div class = "invalid-feedback">
+                {% for error in main_form.first_name.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ main_form.first_name(class = "form-control form-control-lg")}}
+            {% endif%}
+            <!--
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>-->
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last name</label>
+            <!--<input type="text" class="form-control" id="lastName" placeholder="" value="" required>-->
+            {% if main_form.last_name.errors %}
+              {{ main_form.last_name(class = "form-control form-control-lg is-invalid")}}
+              <div class = "invalid-feedback">
+                {% for error in main_form.last_name.errors%}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ main_form.last_name(class = "form-control form-control-lg") }}
+            {% endif %}
+            <!--<div class="invalid-feedback">
+              Valid last name is required.
+            </div>-->
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="username">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <!--<input type="text" class="form-control" id="username" placeholder="Username" required>-->
+            {% if main_form.username.errors %}
+              {{ main_form.username(class = "form-control form-control-lg is-invalid") }}
+              <div class = "invalid-feedback">
+                {% for error in main_form.username.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+             {% else %}
+                {{ main_form.username(class = "form-control form-control-lg") }}
+             {% endif %}
+            <!--<div class="invalid-feedback" style="width: 100%;">
+              Your username is required.
+            </div>-->
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email </label>
+          <!--<input type="email" class="form-control" id="email" placeholder="you@example.com">-->
+          {% if main_form.email.errors %}
+            {{ main_form.email(class = "form-control form-control-lg is-invalid") }}
+            <div class = "invalid-feedback">
+              {% for error in main_form.email.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ main_form.email(class = "form-control form-control-lg") }}
+          {% endif %}
+          <!--<div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>-->
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address</label>
+          <!--<input type="text" class="form-control" id="address" placeholder="1234 Main St" required>-->
+          {% if main_form.address.errors %}
+            {{ main_form.address(class = "form-control form-control-lg is-invalid") }}
+            <div class = "invalid-feedback">
+              {% for error in main_form.address.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ main_form.address(class = "form-control form-control-lg") }}
+          {% endif %}
+          <!--<div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>-->
+        </div>
+
+        <div class="mb-3">
+          <label for="num">Phone Number</label>
+          <!--<input type="text" class="form-control" id="num" placeholder="" required>
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>-->
+          {% if main_form.phone_number.errors %}
+            {{ main_form.phone_number(class = "form-control form-control-lg is-invalid") }}
+            <div class = "invalid-feedback">
+              {% for error in main_form.phone_number.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ main_form.phone_number(class = "form-control form-control-lg") }}
+          {% endif %}
+        </div>
+
+        <div class="mb-3">
+          <label for="major">Major</label>
+          <!--<input type="text" class="form-control" id="major" placeholder="" required>
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>-->
+          {% if main_form.major.errors %}
+            {{ main_form.major(class = "form-control form-control-lg is-invalid") }}
+            <div class = "invalid-feedback">
+              {% for error in main_form.major.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ main_form.major(class = "form-control form-control-lg") }}
+          {% endif %}
+        </div>
+
+        <div class="mb-3">
+          <label for="year">Year</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>-->
+          {% if main_form.year.errors %}
+            {{ main_form.year(class = "form-control form-control-lg is-invalid") }}
+            <div class = "invalid-feedback">
+              {% for error in main_form.year.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ main_form.year(class = "form-control form-control-lg") }}
+          {% endif %}
+        </div>
+        <!--
+        <h4>Course Information Fall 2021</h4>
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+        <br>
+        <br>
+
+
+        course info above
+
+        questions below
+        <h4>Questions</h4>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Question 1</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Question 2</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Question 3</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Question 4</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>-->
+
+
+
+
+
+        <!--
+        <div class="col-sm">
+                <label for="country">Country</label>
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">Choose...</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+        </div>-->
+
+
+        <!--
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+
+        committee selection
+
+        -->
+        <div class = "form-group">
+          {{ main_form.submit(class = "btn btn-outline-info") }}
+        </div>
+
+
+
+
+
+        <div class="row">
+
+        </div>
+        </div>
+        </center>
+{% endblock content %}

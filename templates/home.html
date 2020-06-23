@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    <center>
+        <h1>Welcome to the VT FASA Officer Application Page</h1>
+        <h3>Click the Links above to Register and Login to your Account</h3>
+        <h3>The following forms must be completed to confirm your application</h3>
+        <h5><a href="{{ url_for('apply') }}">Apply</a></h5>
+        <h5><a href="/committees">Committees</a></h5>
+        <h5><a href="/courses">Courses</a></h5>
+        <h5><a href="/questions">Questions</a></h5>
+        <h3>Once you have clicked the submit button on each form, your work is saved</h3>
+        <h3>Complete the Form prior to the deadline</h3>
+        <h3>If you have any questions, please contact: jane.doe@vt.edu</h3>
+    </center>
+{% endblock content %}

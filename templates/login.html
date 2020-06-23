@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Login Page</h1>
+    <div class="col-md-8 order-md-1">
+      <!--<h4 class="mb-3">Billing address</h4>-->
+      <form class="needs-validation" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+          <!--
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>-->
+          {{ form.email.label(class = "form-control-label") }}
+          {% if form.email.errors %}
+            {{ form.email(class = "form-control form-control-lg is-invalid")}}
+            <div class = "invalid-feedback">
+                {% for error in form.email.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+          {% else %}
+            {{ form.email(class = "form-control form-control-lg")}}
+          {% endif %}
+        </div>
+          <div class="mb-3">
+            {{ form.password.label(class = "form-control-label") }}
+            {% if form.password.errors %}
+              {{ form.password(class = "form-control form-control-lg is-invalid")}}
+                <div class = "invalid-feedback">
+                  {% for error in form.password.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+            {% else %}
+              {{ form.password(class = "form-control form-control-lg")}}
+            {% endif %}
+          </div>
+          <div class = "form-check">
+                    {{ form.remember(class = "form-check-input") }}
+                    {{ form.remember.label(class = "form-check-label") }}
+          </div>
+            <div class = "form-group">
+                {{ form.submit(class = "btn btn-outline-info")}}
+            </div>
+                <a href="{{ url_for('reset_request') }}">
+                    Forgot Password?
+                </a>
+      </form>
+      </div>
+{% endblock content %}

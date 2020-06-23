@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+        <h4>Questions</h4>
+    <form class = "needs-validation" method = "POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">What other organizations/activities will you be participating in this upcoming school year?</label>
+          <!--<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>-->
+            {% if form.question_1.errors %}
+                {{ form.question_1(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.question_1.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.question_1(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <!--
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Question 2</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Question 3</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Question 4</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+        -->
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">What qualifications/characteristics can you bring to the committees you have chosen?</label>
+          <!--<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>-->
+            {% if form.question_2.errors %}
+                {{ form.question_2(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.question_2.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.question_2(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">What new ideas/suggestions do you have for the committees you have chosen other than the ones outlined in the Constitution*?</label>
+          <!--<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>-->
+            {% if form.question_3.errors %}
+                {{ form.question_3(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.question_3.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.question_3(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">What new ideas/suggestions do you have for FASA in general?</label>
+          <!--<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>-->
+            {% if form.question_4.errors %}
+                {{ form.question_4(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.question_4.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.question_4(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class = "form-group">
+          {{ form.submit(class = "btn btn-outline-info") }}
+        </div>
+    </form>
+{% endblock content %}

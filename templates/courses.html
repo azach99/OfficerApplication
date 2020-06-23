@@ -1,0 +1,493 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h4>Course Information Fall 2021</h4>
+    <form class = "needs-validation" method = "POST">
+        {{ form.hidden_tag()}}
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_1_number.errors %}
+                {{ form.course_1_number(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_1_number.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_1_number(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_1_name.errors %}
+                {{ form.course_1_name(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_1_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_1_name(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_1_credits.errors %}
+                {{ form.course_1_credits(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_1_credits.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_1_credits(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+          </div>
+
+        <!--<div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>-->
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_2_number.errors %}
+                {{ form.course_2_number(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_2_number.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_2_number(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_2_name.errors %}
+                {{ form.course_2_name(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_2_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_2_name(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_2_credits.errors %}
+                {{ form.course_2_credits(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_2_credits.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_2_credits(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+          </div>
+        <!--
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+
+
+          </div>-->
+
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_3_number.errors %}
+                {{ form.course_3_number(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_3_number.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_3_number(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_3_name.errors %}
+                {{ form.course_3_name(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_3_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_3_name(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_3_credits.errors %}
+                {{ form.course_3_credits(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_3_credits.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_3_credits(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+          </div>
+
+
+        <!--
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>-->
+
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_4_number.errors %}
+                {{ form.course_4_number(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_4_number.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_4_number(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_4_name.errors %}
+                {{ form.course_4_name(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_4_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_4_name(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_4_credits.errors %}
+                {{ form.course_4_credits(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_4_credits.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_4_credits(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+          </div>
+
+
+        <!--
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>-->
+
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_5_number.errors %}
+                {{ form.course_5_number(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_5_number.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_5_number(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_5_name.errors %}
+                {{ form.course_5_name(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_5_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_5_name(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_5_credits.errors %}
+                {{ form.course_5_credits(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_5_credits.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_5_credits(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+          </div>
+
+
+        <!--
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+
+          -->
+
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_6_number.errors %}
+                {{ form.course_6_number(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_6_number.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_6_number(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_6_name.errors %}
+                {{ form.course_6_name(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_6_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_6_name(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_6_credits.errors %}
+                {{ form.course_6_credits(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_6_credits.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_6_credits(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+          </div>
+
+
+        <!--
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+
+          -->
+
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_7_number.errors %}
+                {{ form.course_7_number(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_7_number.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_7_number(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_7_name.errors %}
+                {{ form.course_7_name(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_7_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_7_name(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_7_credits.errors %}
+                {{ form.course_7_credits(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_7_credits.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_7_credits(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+          </div>
+
+        <!--
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <input type="text" class="form-control" id="year" placeholder="" required>
+        </div>
+          </div>
+
+          -->
+
+        <div class = "row">
+        <div class="col-sm">
+          <label for="year">Course Number</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_8_number.errors %}
+                {{ form.course_8_number(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_8_number.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_8_number(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year">Course Name</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_8_name.errors %}
+                {{ form.course_8_name(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_8_name.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_8_name(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="col-sm">
+          <label for="year"># of Credits</label>
+          <!--<input type="text" class="form-control" id="year" placeholder="" required>-->
+            {% if form.course_8_credits.errors %}
+                {{ form.course_8_credits(class = "form-control form-control-lg is-invalid") }}
+                <div class = "invalid-feedback">
+                    {% for error in form.course_8_credits.errors %}
+                        <span> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course_8_credits(class = "form-control form-control-lg") }}
+            {% endif %}
+        </div>
+          </div>
+        <br>
+        <br>
+        <div class = "form-group">
+          {{ form.submit(class = "btn btn-outline-info") }}
+        </div>
+        </form>
+
+{% endblock content %}

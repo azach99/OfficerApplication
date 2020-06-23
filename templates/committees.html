@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+    <center>
+    <h1>Committee Selection</h1>
+    <form class = "needs-validation" method = "POST">
+        {{ form.hidden_tag() }}
+        <div class = "col-md-6 mb-3">
+            {{ form.first_choice.label(class = "form-control-label") }}
+            {% if form.first_choice.errors %}
+              {{ form.first_choice(class = "form-control form-control-lg is-invalid")}}
+              <div class = "invalid-feedback">
+                {% for error in form.first_choice.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.first_choice(class = "form-control form-control-lg")}}
+            {% endif %}
+        </div>
+        <div class = "col-md-6 mb-3">
+            {{ form.second_choice.label(class = "form-control-label") }}
+            {% if form.second_choice.errors %}
+              {{ form.second_choice(class = "form-control form-control-lg is-invalid")}}
+              <div class = "invalid-feedback">
+                {% for error in form.second_choice.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.second_choice(class = "form-control form-control-lg")}}
+            {% endif %}
+        </div>
+        <div class = "col-md-6 mb-3">
+            {{ form.third_choice.label(class = "form-control-label") }}
+            {% if form.third_choice.errors %}
+              {{ form.third_choice(class = "form-control form-control-lg is-invalid")}}
+              <div class = "invalid-feedback">
+                {% for error in form.third_choice.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.third_choice(class = "form-control form-control-lg")}}
+            {% endif %}
+        </div>
+
+        <div class = "form-group">
+                {{ form.submit(class = "btn btn-outline-info")}}
+          </div>
+    </form>
+        </center>
+{% endblock content %}
